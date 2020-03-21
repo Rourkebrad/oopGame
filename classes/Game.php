@@ -3,14 +3,16 @@
 //class named Game with two properties
 class Game
 {
+    //properties
     // need to decide public, protected, private
-    public $phrase;  //an instance of the Phrase class to use with the game
-    public $lives;   //am integer for the number of wrong chances to guess the phrase
+    private $phrase;  //a Phrase objectm which will be set by the constructor
+    private $lives = 5;   //used to set how many wrong guesses a player has before Game Over. This should be set to 5.
 
-    //class should include a constructor which accepts a Phrase object and sets the property
-    function __construct()
+    //constructor
+    //class should include a constructor which accepts a Phrase object and sets the property. Should receive one REQUIRED parameters, a Phrase object. Use this object to set the $phrase property
+    public function __construct($phraseObj)
     {
-
+      $this->phrase = $phraseObj;
 
     }
 

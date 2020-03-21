@@ -1,3 +1,16 @@
+<?php
+require('classes/Game.php');
+require('classes/Phrase.php');
+
+$phrase = new Phrase(); // objects
+$game = new Game($phrase);     // pass the $phrase object when instantiating the Game object
+
+
+//var_dump($phrase);
+//var_dump($game);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
