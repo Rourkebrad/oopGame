@@ -5,6 +5,7 @@ require('classes/Phrase.php');
 $phrase = new Phrase(); // objects
 $game = new Game($phrase);     // pass the $phrase object when instantiating the Game object
 
+echo $phrase->addPhraseToDisplay();
 
 //var_dump($phrase);
 //var_dump($game);

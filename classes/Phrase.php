@@ -14,15 +14,15 @@ class Phrase
   */
   public function __construct($phrase=null, $selected=null)
   {
-    if(!empty($phrase))
+    if($phrase == null)
     {
     $this->currentPhrase = $phrase;
     }
 
-    if(!empty($selected))
+    if($selected == null)
     {
     $this->selected = $selected;
-    }
+  }
 
   }
 
@@ -34,31 +34,26 @@ class Phrase
   */
   public function addPhraseToDisplay()
   {
-    $renderOutput = '<div id="phrase" class="section"><ul>';   //first line of output
+    $renderOutput = "<div id='phrase' class='section'><ul>";   //first line of output
     $phraseLetter = str_split(strtolower($this->currentPhrase));    //splits the string into lowercase characters
 
     foreach($phraseLetter as $letter)
     {
-      if($letter = " ")
+      if($letter == " ")
       {
-        $classForLetter = "space";
+        $renderOutput .= "<li class=\"space\"></li>";
+      }  else {
+        $renderOutput .= "<li class=\"hide\">" . $letter . "</li>";
       }
+      //$renderOutput .= "<li class = '$classForLetter $letter'>$letter</li>";
       }
-
+      $renderOutput .= "</ul></div>";
+      return $renderOutput;
     }
 
-  }
-
-  //methods
-  function checkLetter()
-  {
-
 
   }
 
-
-
-}
 
 
 
