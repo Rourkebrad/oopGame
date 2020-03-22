@@ -5,8 +5,8 @@
 class Phrase
 {
     //properties
-    private $currentPhrase = "";   //A string containing the current phrase to be used in the game.
-    private $selected = [];   //Am array of letters the user has guessed. initialisep the property to an empty array.
+    private $currentPhrase;   //A string containing the current phrase to be used in the game.
+    private $selected = [];   //An array of letters the user has guessed. initialisep the property to an empty array.
     public $phrase = "dream big";
 
   /*constructor that accepts two parameters optional. $phrase a string, or if empty, get a random phrase.
