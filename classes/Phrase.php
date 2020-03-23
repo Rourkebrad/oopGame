@@ -43,7 +43,7 @@ class Phrase
       {
         $renderOutput .= "<li class=\"space\"></li>";
       }  else {
-        $renderOutput .= "<li class=\"hide\">" . $letter . "</li>";
+        $renderOutput .= "<li class=\"show\">" . $letter . "</li>";
       }
       //$renderOutput .= "<li class = '$classForLetter $letter'>$letter</li>";
       }
