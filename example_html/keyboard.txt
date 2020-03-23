@@ -4,7 +4,7 @@
         <button class="key">w</button>
         <button class="key">e</button>
         <button class="key">r</button>
-        <button class="key" style="background-color: red" disabled>t</button>
+        <button class="key">t</button>
         <button class="key">y</button>
         <button class="key">u</button>
         <button class="key">i</button>

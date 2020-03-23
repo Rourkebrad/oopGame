@@ -5,8 +5,9 @@ require('classes/Phrase.php');
 $phrase = new Phrase("dream big"); // objects
 $game = new Game($phrase);     // pass the $phrase object when instantiating the Game object
 
-echo $phrase->addPhraseToDisplay();
 
+echo $game->displayKeyboard();
+var_dump($_POST);
 //var_dump($phrase);
 //var_dump($game);
 
@@ -25,9 +26,10 @@ echo $phrase->addPhraseToDisplay();
 
 <body>
 <div class="main-container">
-    <div id="banner" class="section">
+
         <h2 class="header">Phrase Hunter</h2>
-    </div>
+        <?php echo $phrase->addPhraseToDisplay(); ?>
+
 </div>
 
 </body>

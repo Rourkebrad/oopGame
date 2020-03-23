@@ -44,6 +44,61 @@ class Game
 
     }
 
+    /*
+    Head back to Game.php. Now we want to show our keyboard. Create a `displayKeyboard`
+    function that builds the HTML of a form with each letter being a submit button. You can find a
+    sample of the button HTML in example_html/keyboard.txt. Start by pasting this sample code into
+    your `displayKeyboard` method. Make sure you surround this code with a form that POSTS to the
+    play.php page. Return the HTML.
+    */
+
+    function displayKeyboard()
+    {
+      ;
+      $keys = "<form action='play.php' method='POST'>";
+      $keys .= "<div id=\"qwerty\" class=\"section\">";
+
+      $keys .= "<div class=\"keyrow\">";
+      $keys .= "<button class=\"key\">q</button>";
+      $keys .= "<button class=\"key\">w</button>";
+      $keys .= "<button class=\"key\">e</button>";
+      $keys .= "<button class=\"key\">r</button>";
+      $keys .= "<button class=\"key\">t</button>";
+      $keys .= "<button class=\"key\">y</button>";
+      $keys .= "<button class=\"key\">u</button>";
+      $keys .= "<button class=\"key\">i</button>";
+      $keys .= "<button class=\"key\">o</button>";
+      $keys .= "<button class=\"key\">p</button>";
+      $keys .= "</div>";
+
+      $keys .= "<div class=\"keyrow\">";
+      $keys .= "<button class=\"key\">a</button>";
+      $keys .= "<button class=\"key\">s</button>";
+      $keys .= "<button class=\"key\">d</button>";
+      $keys .= "<button class=\"key\">f</button>";
+      $keys .= "<button class=\"key\">g</button>";
+      $keys .= "<button class=\"key\">h</button>";
+      $keys .= "<button class=\"key\">j</button>";
+      $keys .= "<button class=\"key\">k</button>";
+      $keys .= "<button class=\"key\">l</button>";
+      $keys .= "</div>";
+
+      $keys .= "<div class=\"keyrow\">";
+      $keys .= "<button class=\"key\">z</button>";
+      $keys .= "<button class=\"key\">x</button>";
+      $keys .= "<button class=\"key\">c</button>";
+      $keys .= "<button class=\"key\">v</button>";
+      $keys .= "<button class=\"key\">b</button>";
+      $keys .= "<button class=\"key\">n</button>";
+      $keys .= "<button class=\"key\">m</button>";
+      $keys .= "</div>";
+
+      $keys .= "</div>";
+      $keys .= "</form";
+
+      return $keys;
+    }
+
 
 }
 
