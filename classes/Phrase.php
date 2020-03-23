@@ -14,12 +14,12 @@ class Phrase
   */
   public function __construct($phrase=null, $selected=null)
   {
-    if($phrase == null)
+    if(!empty($phrase))
     {
     $this->currentPhrase = $phrase;
     }
 
-    if($selected == null)
+    if(!empty($selected))
     {
     $this->selected = $selected;
   }
