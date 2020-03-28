@@ -27,10 +27,11 @@ $game = new Game($phrase);     // pass the $phrase object when instantiating the
 <div class="main-container">
 
         <h2 class="header">Phrase Hunter</h2>
-        <?php echo $phrase->addPhraseToDisplay();
+        <?php
+        echo $phrase->addPhraseToDisplay();
         echo $game->displayKeyboard();
-
         var_dump($_POST);
+
         ?>
 
 </div>
