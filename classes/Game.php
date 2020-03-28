@@ -52,7 +52,7 @@ class Game
     play.php page. Return the HTML.
     */
 
-    function displayKeyboard()
+    public function displayKeyboard()
     {
       ;
       $keys = "<form action='play.php' method='POST'>";
