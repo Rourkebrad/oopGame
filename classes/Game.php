@@ -55,8 +55,8 @@ class Game
     public function displayKeyboard()
     {
 
-      $keys = "<form action='play.php' method='POST'>";
-      $keys .= "<div id=\"qwerty\" class=\"section\">";
+      //$keys = "<form action='play.php' method='POST'>";
+      $keys = "<div id=\"qwerty\" class=\"section\">";
 
       $keys .= "<div class=\"keyrow\">";
       $keys .= "<button class=\"key\">q</button>";
@@ -94,7 +94,7 @@ class Game
       $keys .= "</div>";
 
       $keys .= "</div>";
-      $keys .= "</form";
+    //  $keys .= "</form";
 
       return $keys;
 
