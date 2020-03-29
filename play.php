@@ -2,9 +2,10 @@
 require('classes/Game.php');
 require('classes/Phrase.php');
 
+
+
 $phrase = new Phrase("dream big"); // objects
 $game = new Game($phrase);     // pass the $phrase object when instantiating the Game object
-
 
 
 //var_dump($phrase);
@@ -34,7 +35,7 @@ $game = new Game($phrase);     // pass the $phrase object when instantiating the
         <?php
         echo $game->displayKeyboard();
         var_dump($_POST);
-        
+
 
         ?>
         </form>
