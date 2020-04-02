@@ -40,7 +40,16 @@ class Game
     //sisplay the number of guesses available. See example example_html/scoreboard.txt file for an example of what the render HTML for a scoreboard should look like. Return string HTML of Scoreboard.
     function displayScore()
     {
+      $keys = "<div id=\"scoreboard\" class=\"section\">";
+      $keys .= "<ol>";
+      for ($i =1; $i <= $this->lives; $i++)
+      {
+      $keys .= "<li class=\"tries\"><img src=\"images/liveHeart.png\" height=\"35px\" widght=\"30px\"></li>";
+      }
+      $keys .= "</ol>";
+      $keys .= "</div>";
 
+      return $keys;
 
     }
 

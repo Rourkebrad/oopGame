@@ -2,14 +2,24 @@
 require('classes/Game.php');
 require('classes/Phrase.php');
 
+session_start(); //starts a new session
+var_dump($_SESSION);
 
 
-$phrase = new Phrase("dream big"); // objects
-$game = new Game($phrase);     // pass the $phrase object when instantiating the Game object
 
+if(!isset($_GET['key']))
+  {
+
+  $_SESSION['phrase'] = new Phrase("start small"); // objects
+
+  $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
+  } else
+  {
+    $selection = filter_input(INPUT_GET, 'key', FILTER_SANITIZE_STRING);
+  }
 
 //var_dump($phrase);
-//var_dump($game);
+var_dump($_SESSION['game']);
 
 ?>
 
@@ -29,11 +39,12 @@ $game = new Game($phrase);     // pass the $phrase object when instantiating the
 
         <h2 class="header">Phrase Hunter</h2>
         <?php
-        echo $phrase->addPhraseToDisplay();
+        echo $_SESSION['phrase']->addPhraseToDisplay();
         ?>
         <form action="play.php" method="POST">
         <?php
-        echo $game->displayKeyboard();
+        echo $_SESSION['game']->displayKeyboard();
+        echo $_SESSION['game']->displayScore();
         var_dump($_POST);
 
 
