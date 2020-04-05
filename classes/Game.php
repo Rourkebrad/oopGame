@@ -68,38 +68,38 @@ class Game
       $keys = "<div id=\"qwerty\" class=\"section\">";
 
       $keys .= "<div class=\"keyrow\">";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"q\">q</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"w\">w</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"e\">e</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"r\">r</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"t\">t</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"y\">y</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"u\">u</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"i\">i</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"o\">o</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"p\">p</button>";
+      $keys .= $this->keyIn('q');
+      $keys .= $this->keyIn('w');
+      $keys .= $this->keyIn('e');
+      $keys .= $this->keyIn('r');
+      $keys .= $this->keyIn('t');
+      $keys .= $this->keyIn('y');
+      $keys .= $this->keyIn('u');
+      $keys .= $this->keyIn('i');
+      $keys .= $this->keyIn('o');
+      $keys .= $this->keyIn('p');
       $keys .= "</div>";
 
       $keys .= "<div class=\"keyrow\">";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"a\">a</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"s\">s</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"d\">d</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"f\">f</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"g\">g</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"h\">h</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"j\">j</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"k\">k</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"l\">l</button>";
+      $keys .= $this->keyIn('a');
+      $keys .= $this->keyIn('s');
+      $keys .= $this->keyIn('d');
+      $keys .= $this->keyIn('f');
+      $keys .= $this->keyIn('g');
+      $keys .= $this->keyIn('h');
+      $keys .= $this->keyIn('j');
+      $keys .= $this->keyIn('k');
+      $keys .= $this->keyIn('l');
       $keys .= "</div>";
 
       $keys .= "<div class=\"keyrow\">";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"z\">z</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"x\">x</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"c\">c</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"v\">v</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"b\">b</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"n\">n</button>";
-      $keys .= "<button class=\"key\"name=\"key\"value=\"m\">m</button>";
+      $keys .= $this->keyIn('z');
+      $keys .= $this->keyIn('x');
+      $keys .= $this->keyIn('c');
+      $keys .= $this->keyIn('v');
+      $keys .= $this->keyIn('b');
+      $keys .= $this->keyIn('n');
+      $keys .= $this->keyIn('m');
       $keys .= "</div>";
 
       $keys .= "</div>";
@@ -113,13 +113,13 @@ class Game
     {
       if(!in_array($letter, $this->phrase->selected))
       {
-        return "<button class=\"key\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\">" . $letter . "</button>";
+        return "<input class=\"key\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\">";
       } else {
         if($this->phrase->checkLetter($letter))
         {
-          return "<button class=\"key correct\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>" . $letter . "</button>";
+          return "<input class=\"key correct\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>";
         } else {
-          return "<button class=\"key incorrect\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>" . $letter . "</button>";
+          return "<input class=\"key incorrect\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\"disabled>";
         }
       }
     }
