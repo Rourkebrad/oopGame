@@ -41,14 +41,34 @@ class Phrase
     {
       if($letter == " ")
       {
-        $renderOutput .= "<li class=\"space\"></li>";
-      }  else {
-        $renderOutput .= "<li class=\"show\">" . $letter . "</li>";
+        $renderOutput .= "<li class=\"space\">" . $letter . "</li>";
+      }  elseif (!in_array($letter, $this->selected)) {
+        $renderOutput .= "<li class=\"hide letter\">" . $letter . "</li>";
+      } elseif (in_array($letter, $this->selected))
+      {
+        $renderOutput .= "<li class=\"show letter\">" . $letter . "</li>";
       }
-      //$renderOutput .= "<li class = '$classForLetter $letter'>$letter</li>";
+
       }
       $renderOutput .= "</ul></div>";
       return $renderOutput;
+    }
+
+    public function getLetterArray()
+    {
+      return array_unique(str_split(str_replace(
+                 ' ',
+                 '',
+                 strtolower($this->currentPhrase)
+        )));
+    }
+
+    public function checkLetter($letter)
+    {
+    if (in_array($letter, $this->getLetterArray())) {
+        return true;
+      } else {return false;}
+
     }
 
 

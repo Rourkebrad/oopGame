@@ -10,7 +10,7 @@ var_dump($_SESSION);
 if(!isset($_GET['key']))
   {
 
-  $_SESSION['phrase'] = new Phrase("start small"); // objects
+  $_SESSION['phrase'] = new Phrase('start small'); // objects
 
   $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
   } else
@@ -20,7 +20,7 @@ if(!isset($_GET['key']))
 
 //var_dump($phrase);
 var_dump($_SESSION['game']);
-
+var_dump($_SESSION['phrase']->checkLetter('t'));
 ?>
 
 <!DOCTYPE html>

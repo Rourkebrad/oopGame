@@ -109,6 +109,21 @@ class Game
 
     }
 
+    public function keyIn($letter)
+    {
+      if(!in_array($letter, $this->phrase->selected))
+      {
+        return "<button class=\"key\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\">" . $letter . "</button>";
+      } else {
+        if($this->phrase->checkLetter($letter))
+        {
+          return "<button class=\"key correct\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>" . $letter . "</button>";
+        } else {
+          return "<button class=\"key incorrect\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>" . $letter . "</button>";
+        }
+      }
+    }
+
 
 }
 
