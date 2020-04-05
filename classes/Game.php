@@ -113,13 +113,13 @@ class Game
     {
       if(!in_array($letter, $this->phrase->selected))
       {
-        return "<input class=\"key\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\">";
+        return "<input id=\"" . $letter . "\" type=\"submit\" button name=\"key\"value=\"" . $letter . "\" class=\"key\" ></button>";
       } else {
         if($this->phrase->checkLetter($letter))
         {
-          return "<input class=\"key correct\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\" disabled>";
+          return "<input id=\"" . $letter . "\" type=\"submit\" button name=\"key\"value=\"" . $letter . "\" class=\"key correct\" disabled ></button>";
         } else {
-          return "<input class=\"key incorrect\" id=\"" . $letter . "\" type=\"submit\" name=\"key\"value=\"" . $letter . "\"disabled>";
+          return "<input id=\"" . $letter . "\" type=\"submit\" button name=\"key\"value=\"" . $letter . "\" class=\"key incorrect\" disabled ></button>";
         }
       }
     }
