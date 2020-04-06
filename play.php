@@ -16,6 +16,7 @@ if(!isset($_POST['key']))
   } else
   {
     $selection = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
+    $_SESSION['phrase']->selected[] = $selection;
   }
 
 //var_dump($phrase);
