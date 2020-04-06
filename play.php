@@ -7,7 +7,7 @@ var_dump($_SESSION);
 
 
 
-if(!isset($_GET['key']))
+if(!isset($_POST['key']))
   {
 
   $_SESSION['phrase'] = new Phrase('start small'); // objects
@@ -15,7 +15,7 @@ if(!isset($_GET['key']))
   $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
   } else
   {
-    $selection = filter_input(INPUT_GET, 'key', FILTER_SANITIZE_STRING);
+    $selection = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
   }
 
 //var_dump($phrase);
