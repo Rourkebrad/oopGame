@@ -5,15 +5,20 @@ require('classes/Phrase.php');
 session_start(); //starts a new session
 var_dump($_SESSION);
 
+if (isset($_POST['start'])) {
+    unset($_SESSION['selected']);
+    unset($_SESSION['phrase']);
+  }
+
+
 
 
 if(!isset($_POST['key']))
   {
+    $_SESSION['phrase'] = new Phrase(); // objects
+    $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
 
-  $_SESSION['phrase'] = new Phrase('start small'); // objects
-
-  $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
-  } else
+  }
   {
     $selection = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
     $_SESSION['phrase']->selected[] = $selection;
@@ -22,6 +27,9 @@ if(!isset($_POST['key']))
 //var_dump($phrase);
 var_dump($_SESSION['game']);
 var_dump($_SESSION['phrase']->checkLetter('t'));
+echo "<br>";
+var_dump($_SESSION['game']->checkForLose());
+
 ?>
 
 <!DOCTYPE html>

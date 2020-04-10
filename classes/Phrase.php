@@ -7,7 +7,14 @@ class Phrase
     //properties
     public $currentPhrase;   //A string containing the current phrase to be used in the game.
     public $selected = [];   //An array of letters the user has guessed. initialisep the property to an empty array.
-    //public $phrase = "";
+    public $phrase = [
+    "Boldness be my friend",
+    "Leave no stone unturned",
+    "Broken crayons still colour",
+    "The adventure begins",
+    "Dream without fear",
+    "Love without limits"
+    ];
 
   /*constructor that accepts two parameters optional. $phrase a string, or if empty, get a random phrase.
   $selected an array of selected letters.
@@ -17,7 +24,10 @@ class Phrase
     if(!empty($phrase))
     {
     $this->currentPhrase = $phrase;
-    }
+    } elseif (!isset($phrase))  {
+        $randomPhrase = array_rand($this->phrase);
+        $this->currentPhrase = $this->phrase[$randomPhrase];
+      }
 
     if(!empty($selected))
     {
@@ -68,6 +78,12 @@ class Phrase
     if (in_array($letter, $this->getLetterArray())) {
         return true;
       } else {return false;}
+
+    }
+
+    public function numberLost()
+    {
+      return count(array_diff($this->selected, $this->getLetterArray()));
 
     }
 

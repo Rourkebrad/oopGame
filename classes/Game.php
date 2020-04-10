@@ -19,20 +19,51 @@ class Game
     //this method checks to see if the player has selected all of the letters
     function checkForWin()
     {
+      if (count(array_intersect($this->phrase->selected, $this->phrase->getLetterArray())) == count($this->phrase->getLetterArray()))
+      {
+        return true;
 
+      } else {
+        return false;
+      }
 
     }
 
     //this method checks to see if the player has guessed too many wrong letters
     function checkForLose()
     {
-
-
+      if ($this->phrase->numberLost() == $this->lives)
+      {
+        return true;
+      }  else
+          {
+            return false;
+          }
     }
+
+
+
 
     //this method displays one message if the player wins and another message if they lose. It returns false if the game has not been won or lost.
     function gameOver()
     {
+      if($this->checkForLose() == true)
+      {
+        return "<div id=\"overlay\" class=\"lose\"><h1 id=\"game-over-message\">The phrase was: " . $this->phrase->currentPhrase ." Better luck next time!</h1>
+        <form action=\"play.php\" method=\"post\">
+            <input id=\"btn__reset\" type=\"submit\" value=\"Start Game\" />
+        </form></div>";
+      } elseif ($this->checkForWin() == true)
+      {
+
+        return "<div id=\"overlay\" class=\"win\"><h1 id=\"game-over-message\">Congratulations on guessing: " . $this->phrase->currentPhrase ."</h1>
+        <form action=\"play.php\" method=\"post\">
+            <input id=\"btn__reset\" type=\"submit\" value=\"Start Game\" />
+        </form></div>";
+
+      } else {
+        return false;
+      }
 
 
     }
@@ -40,12 +71,19 @@ class Game
     //sisplay the number of guesses available. See example example_html/scoreboard.txt file for an example of what the render HTML for a scoreboard should look like. Return string HTML of Scoreboard.
     function displayScore()
     {
+
       $keys = "<div id=\"scoreboard\" class=\"section\">";
       $keys .= "<ol>";
-      for ($i =1; $i <= $this->lives; $i++)
+      for ($i =1; $i <= $this->phrase->numberLost(); $i++)
       {
-      $keys .= "<li class=\"tries\"><img src=\"images/liveHeart.png\" height=\"35px\" widght=\"30px\"></li>";
+      $keys .= "<li class=\"tries\"><img src=\"images/lostHeart.png\" height=\"35px\" widght=\"30px\"></li>";
       }
+      for ($i =1; $i <= ($this->lives - $this->phrase->numberLost()); $i++)
+      {
+        $keys .= "<li class=\"tries\"><img src=\"images/liveHeart.png\" height=\"35px\" widght=\"30px\"></li>";
+
+      }
+
       $keys .= "</ol>";
       $keys .= "</div>";
 
@@ -103,7 +141,7 @@ class Game
       $keys .= "</div>";
 
       $keys .= "</div>";
-    //  $keys .= "</form";
+
 
       return $keys;
 
