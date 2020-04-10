@@ -21,11 +21,6 @@ if(!isset($_POST['key']))
     $_SESSION['phrase']->selected[] = $selection;
   }
 
-//var_dump($phrase);
-//var_dump($_SESSION['game']);
-//var_dump($_SESSION['phrase']->checkLetter('t'));
-//echo "<br>";
-//var_dump($_SESSION['game']->checkForLose());
 
 ?>
 
@@ -63,14 +58,15 @@ if(!isset($_POST['key']))
 
         </form>
 
+<!-- Script for using keyboard for choosing answer   -->
         <script>
         document.addEventListener('keydown', function(event) {
-          var keys = document.getElementsByClassName('key');
+          var keyboard = document.getElementsByClassName('key');
           var key_press = event.key;
-          for(let i= 0; i <= keys.length -1; i++) {
-              let key = keys[i].value;
+          for(let i= 0; i <= keyboard.length -1; i++) {
+              let key = keyboard[i].value;
               if(key_press == key) {
-                keys[i].click();
+                keyboard[i].click();
               }
           }
         });

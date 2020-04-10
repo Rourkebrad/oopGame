@@ -49,14 +49,14 @@ class Game
     {
       if($this->checkForLose() == true)
       {
-        return "<div id=\"overlay\" class=\"lose\"><h1 id=\"game-over-message\">The phrase was: " . $this->phrase->currentPhrase ." Better luck next time!</h1>
+        return "<div id=\"overlay\" class=\"lose\"><h1 id=\"game-over-message\">The phrase was: \"" . $this->phrase->currentPhrase ."\" Better luck next time!</h1>
         <form action=\"play.php\" method=\"post\">
             <input id=\"btn__reset\" type=\"submit\" value=\"Start Game\" />
         </form></div>";
       } elseif ($this->checkForWin() == true)
       {
 
-        return "<div id=\"overlay\" class=\"win\"><h1 id=\"game-over-message\">Congratulations on guessing: " . $this->phrase->currentPhrase ."</h1>
+        return "<div id=\"overlay\" class=\"win\"><h1 id=\"game-over-message\">Congratulations on guessing: \"" . $this->phrase->currentPhrase ."\"</h1>
         <form action=\"play.php\" method=\"post\">
             <input id=\"btn__reset\" type=\"submit\" value=\"Start Game\" />
         </form></div>";
