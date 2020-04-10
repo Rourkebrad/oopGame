@@ -74,6 +74,8 @@ class Game
 
       $keys = "<div id=\"scoreboard\" class=\"section\">";
       $keys .= "<ol>";
+
+
       for ($i =1; $i <= $this->phrase->numberLost(); $i++)
       {
       $keys .= "<li class=\"tries\"><img src=\"images/lostHeart.png\" height=\"35px\" widght=\"30px\"></li>";

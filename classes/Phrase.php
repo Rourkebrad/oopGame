@@ -8,13 +8,17 @@ class Phrase
     public $currentPhrase;   //A string containing the current phrase to be used in the game.
     public $selected = [];   //An array of letters the user has guessed. initialisep the property to an empty array.
     public $phrase = [
-    "Boldness be my friend",
-    "Leave no stone unturned",
-    "Broken crayons still colour",
+    "right up your alley",
+    "Play Cat and Mouse",
+    "I can and I will",
     "The adventure begins",
     "Dream without fear",
-    "Love without limits"
-    ];
+    "Love without limits",
+    "Prove them wrong",
+    "He who is brave is free",
+    "Fight till the last gasp",
+    "You can do anything you set your mind to"
+      ];
 
   /*constructor that accepts two parameters optional. $phrase a string, or if empty, get a random phrase.
   $selected an array of selected letters.
