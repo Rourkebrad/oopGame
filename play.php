@@ -15,7 +15,7 @@ if(!isset($_POST['key']))
   {
     $_SESSION['phrase'] = new Phrase(); // objects
     $_SESSION['game'] = new Game($_SESSION['phrase']);     // pass the $phrase object when instantiating the Game object
-  }
+  } else
   {
     $selection = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
     $_SESSION['phrase']->selected[] = $selection;
