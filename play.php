@@ -54,7 +54,9 @@ var_dump($_SESSION['game']->checkForLose());
         <?php
         echo $_SESSION['game']->displayKeyboard();
         echo $_SESSION['game']->displayScore();
-        var_dump($_POST);
+        echo $_SESSION['game']->gameOver();
+      
+
 
 
         ?>
